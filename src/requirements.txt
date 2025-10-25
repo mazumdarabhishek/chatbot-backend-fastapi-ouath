@@ -1,0 +1,12 @@
+langchain
+fastapi
+uvicorn[standard]
+pydantic
+httpx
+python-dotenv
+langchain-google-genai
+sqlalchemy
+langgraph
+langgraph-checkpoint-postgres
+psycopg2-binary
+alembic

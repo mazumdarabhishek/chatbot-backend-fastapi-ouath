@@ -1,0 +1,123 @@
+{
+	"info": {
+		"_postman_id": "1eb29ab8-4cfd-4cf2-978d-1addeaab1799",
+		"name": "fastapi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "37051503",
+		"_collection_link": "https://solo66-7576.postman.co/workspace/0c7f41b2-d6c9-41db-a2fd-9c90c117feb6/collection/37051503-1eb29ab8-4cfd-4cf2-978d-1addeaab1799?action=share&source=collection_link&creator=37051503"
+	},
+	"item": [
+		{
+			"name": "sign-up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Bob\",\r\n    \"email\": \"abhishekmazumdar94@gmail.com\",\r\n    \"password\": \"Abc@12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/auth/signup"
+			},
+			"response": []
+		},
+		{
+			"name": "verify_otp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"unique_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhYmhpc2hla21henVtZGFyOTRAZ21haWwuY29tIiwicmVxdWVzdF90eXBlIjoic2lnbnVwIiwiZXhwIjoxNzYxMzc0Mzg1fQ.OWfTZDdejomy88qWu0sG4x7ZnC8CPM3rOMnf38UhU8k\",\r\n    \"otp\": \"872845\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/auth/verify_otp"
+			},
+			"response": []
+		},
+		{
+			"name": "log-in",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"abhishekmazumdar94@gmail.com\",\r\n    \"password\": \"Abc@12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "chat",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": {
+						"addTokenTo": "header"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"thread_id\": \"64d74a33-0968-482f-ac78-2a15da4694ed\",\r\n   \"user_input\": \"How many species are there in cat family?\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/chatbot/chat"
+			},
+			"response": []
+		},
+		{
+			"name": "delete_session",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": {
+						"addTokenTo": "header"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": "http://127.0.0.1:8000/chatbot/delete_session/64d74a33-0968-482f-ac78-2a15da4694ed"
+			},
+			"response": []
+		},
+		{
+			"name": "delete-account",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": {
+						"addTokenTo": "header"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "http://127.0.0.1:8000/auth/delete_account"
+			},
+			"response": []
+		}
+	]
+}
